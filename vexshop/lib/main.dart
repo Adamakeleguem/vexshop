@@ -1,4 +1,7 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:vexshop/screens/on_boarbing_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,16 +19,33 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+      initialRoute: SplashScreen.id,
+      routes: {
+        SplashScreen.id: (context) => const SplashScreen(),
+        OnBoardingScreen.id: (context) => const OnBoardingScreen()
+      },
     );
   }
 }
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
+  static const String id = 'Splash_screen';
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    Timer(const Duration(seconds: 5),
+        () => Navigator.pushReplacementNamed(context, OnBoardingScreen.id));
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge, overlays: []);
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(

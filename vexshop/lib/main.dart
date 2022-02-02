@@ -38,7 +38,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Timer(const Duration(seconds: 5),
+    Timer(const Duration(seconds: 3),
         () => Navigator.pushReplacementNamed(context, OnBoardingScreen.id));
     super.initState();
   }

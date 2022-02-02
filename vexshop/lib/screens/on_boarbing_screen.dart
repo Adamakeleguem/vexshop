@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:flutter/services.dart';
+import 'package:vexshop/screens/home_screen.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -11,8 +13,14 @@ class OnBoardingScreen extends StatefulWidget {
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   double scrollerPosition = 0;
+  onButtonPressed() {
+    Navigator.pushReplacementNamed(context, HomeScreen.id);
+  }
+
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     return Scaffold(
         body: Stack(
       children: [
@@ -157,18 +165,34 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   activeColor: Colors.white,
                 ),
               ),
-              TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    "Sauter ces étapes",
-                    style: TextStyle(fontSize: 14, color: Colors.blue),
-                  )),
+              scrollerPosition == 3
+                  ? Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(
+                                Colors.deepOrange[100])),
+                        child: const Text('commencez'),
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(
+                              context, HomeScreen.id);
+                        },
+                      ),
+                    )
+                  : TextButton(
+                      onPressed: () {
+                        onButtonPressed();
+                      },
+                      child: const Text(
+                        "Sauter ces étapes",
+                        style: TextStyle(fontSize: 14, color: Colors.blue),
+                      )),
               const SizedBox(
                 height: 40,
               )
             ],
           ),
-        )
+        ),
       ],
     ));
   }
@@ -181,17 +205,21 @@ class OnboardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        Container(
+          color: Colors.deepOrange[100],
+          child: Center(child: bordColumn),
+        ),
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
             width: MediaQuery.of(context).size.width,
-            height: 80,
-            decoration: const BoxDecoration(color: Colors.blueAccent),
+            height: 130,
+            decoration: const BoxDecoration(
+                color: Color(0xF87D348D),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(100),
+                    topRight: Radius.circular(100))),
           ),
-        ),
-        Container(
-          color: Colors.deepOrange[100],
-          child: Center(child: bordColumn),
         ),
       ],
     );

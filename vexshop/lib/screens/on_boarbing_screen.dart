@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/services.dart';
-import 'package:vexshop/screens/home_screen.dart';
+import 'package:vexshop/screens/main_screen.dart';
+import 'package:get_storage/get_storage.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -13,8 +14,10 @@ class OnBoardingScreen extends StatefulWidget {
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   double scrollerPosition = 0;
+  final store = GetStorage();
   onButtonPressed() {
-    Navigator.pushReplacementNamed(context, HomeScreen.id);
+    store.write('onBoarding', true);
+    Navigator.pushReplacementNamed(context, MainScreen.id);
   }
 
   @override
@@ -175,7 +178,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         child: const Text('commencez'),
                         onPressed: () {
                           Navigator.pushReplacementNamed(
-                              context, HomeScreen.id);
+                              context, MainScreen.id);
                         },
                       ),
                     )

@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:vexshop/screens/home_screen.dart';
+import 'package:vexshop/screens/main_screen.dart';
 import 'package:vexshop/screens/on_boarbing_screen.dart';
+import 'package:get_storage/get_storage.dart';
 
-void main() {
+void main() async {
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
       routes: {
         SplashScreen.id: (context) => const SplashScreen(),
         OnBoardingScreen.id: (context) => const OnBoardingScreen(),
-        HomeScreen.id: (context) => const HomeScreen()
+        MainScreen.id: (context) => const MainScreen()
       },
     );
   }
@@ -38,10 +40,20 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  final store = GetStorage();
   @override
   void initState() {
-    Timer(const Duration(seconds: 3),
-        () => Navigator.pushReplacementNamed(context, OnBoardingScreen.id));
+    Timer(
+      const Duration(seconds: 3),
+      () {
+        bool? _boarding = store.read('onBoarding');
+        _boarding == null
+            ? Navigator.pushReplacementNamed(context, OnBoardingScreen.id)
+            : _boarding == true
+                ? Navigator.pushReplacementNamed(context, MainScreen.id)
+                : Navigator.pushReplacementNamed(context, OnBoardingScreen.id);
+      },
+    );
     super.initState();
   }
 

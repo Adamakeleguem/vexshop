@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+
+class CartScreen extends StatelessWidget {
+  const CartScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -8,7 +9,7 @@ class HomeScreen extends StatelessWidget {
       body: Container(
         child: const Center(
           child: Text(
-            "Page d'acceuil",
+            "Mon panier",
             style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
           ),
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/services.dart';
+import 'package:vexshop/screens/login_screen.dart';
 import 'package:vexshop/screens/main_screen.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -196,6 +197,21 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             ],
           ),
         ),
+        // button de connexion
+        Align(
+            child: Container(
+          padding: const EdgeInsets.only(right: 10, top: 10),
+          child: ElevatedButton(
+            style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all(Colors.deepOrange[100])),
+            child: const Text('Connexion'),
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, LoginScreen.id);
+            },
+          ),
+        )),
+        // end button login
       ],
     ));
   }

@@ -6,6 +6,10 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Welcome"),
+        centerTitle: true,
+      ),
       body: Container(
         child: const Center(
           child: Text(

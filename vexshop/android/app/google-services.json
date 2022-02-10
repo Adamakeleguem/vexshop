@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "274294619015",
+    "project_id": "vexshop-5406e",
+    "storage_bucket": "vexshop-5406e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:274294619015:android:f9c75562644335bec93122",
+        "android_client_info": {
+          "package_name": "com.example.vexshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "274294619015-0o42625ag10e08a601paha4a2ag77qqb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vexshop",
+            "certificate_hash": "d17f3cf7acd79ba5b9f8bd6e1cbb72a4190fd154"
+          }
+        },
+        {
+          "client_id": "274294619015-dhts490s2omhr2tl06fujrlhpu7m9pq1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCp5OGku08qwv9Dqo3io6xit1rtk2t751c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "274294619015-dhts490s2omhr2tl06fujrlhpu7m9pq1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

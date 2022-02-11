@@ -9,7 +9,7 @@ class CartScreen extends StatelessWidget {
     return const Scaffold(
       body: Center(
         child: Text(
-          "Mon panier",
+          "Mon panier1",
           style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
         ),
       ),

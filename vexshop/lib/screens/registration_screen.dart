@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:vexshop/screens/main_screen.dart';
 
 class RegistrationScreen extends StatefulWidget {
-  static const String id = 'Registration_screeb';
+  static const String id = 'Registration_screen';
   const RegistrationScreen({Key? key}) : super(key: key);
 
   @override
@@ -10,12 +11,12 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   final _formKey = GlobalKey<FormState>();
-  final firstNameEditingController = new TextEditingController();
-  final secondNameEditingController = new TextEditingController();
-  final phoneNumberEditingController = new TextEditingController();
-  final emailEditingController = new TextEditingController();
-  final passwordEditingController = new TextEditingController();
-  final confirmPasswordEditingController = new TextEditingController();
+  final firstNameEditingController = TextEditingController();
+  final secondNameEditingController = TextEditingController();
+  final phoneNumberEditingController = TextEditingController();
+  final emailEditingController = TextEditingController();
+  final passwordEditingController = TextEditingController();
+  final confirmPasswordEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     //firstName fields
@@ -133,9 +134,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.redAccent),
+          icon: const Icon(Icons.arrow_back, color: Colors.redAccent),
           onPressed: () {
-            Navigator.pushReplacementNamed(context, RegistrationScreen.id);
+            Navigator.pushReplacementNamed(context, MainScreen.id);
           },
         ),
       ),
@@ -172,7 +173,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     confirmPasswordField,
                     const SizedBox(height: 15),
                     signUpButton,
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 20),
                   ],
                 ),
               ),

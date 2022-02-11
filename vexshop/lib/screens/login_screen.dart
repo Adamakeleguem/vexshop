@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vexshop/screens/main_screen.dart';
 import 'package:vexshop/screens/registration_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -55,7 +56,9 @@ class _LoginScreenState extends State<LoginScreen> {
         // ignore: prefer_const_constructors
         padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushReplacementNamed(context, MainScreen.id);
+        },
         child: const Text(
           "Connexion",
           textAlign: TextAlign.center,

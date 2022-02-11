@@ -1,6 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:vexshop/screens/account_screen.dart';
+import 'package:vexshop/screens/cart_screen.dart';
+import 'package:vexshop/screens/home_screen.dart';
 import 'package:vexshop/screens/login_screen.dart';
 import 'package:vexshop/screens/main_screen.dart';
 import 'package:vexshop/screens/on_boarbing_screen.dart';
@@ -32,6 +35,9 @@ class MyApp extends StatelessWidget {
         SplashScreen.id: (context) => const SplashScreen(),
         OnBoardingScreen.id: (context) => const OnBoardingScreen(),
         LoginScreen.id: (context) => const LoginScreen(),
+        HomeScreen.id: (context) => const HomeScreen(),
+        AccountScreen.id: (context) => const AccountScreen(),
+        CartScreen.id: (context) => const CartScreen(),
         RegistrationScreen.id: (context) => const RegistrationScreen(),
         MainScreen.id: (context) => const MainScreen()
       },

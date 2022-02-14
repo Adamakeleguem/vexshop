@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vexshop/components/colors.dart';
 import 'package:vexshop/screens/main_screen.dart';
 
 class RegistrationScreen extends StatefulWidget {
@@ -129,12 +130,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColor.backGroundColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.redAccent),
+          icon: const Icon(Icons.arrow_back, color: AppColor.cancelColor),
           onPressed: () {
             Navigator.pushReplacementNamed(context, MainScreen.id);
           },
@@ -143,7 +144,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            color: Colors.white,
+            color: AppColor.backGroundColor,
             child: Padding(
               padding: const EdgeInsets.all(36.0),
               child: Form(
@@ -173,7 +174,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     confirmPasswordField,
                     const SizedBox(height: 15),
                     signUpButton,
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 30),
                   ],
                 ),
               ),

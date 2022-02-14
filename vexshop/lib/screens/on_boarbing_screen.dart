@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/services.dart';
+import 'package:vexshop/components/colors.dart';
 import 'package:vexshop/screens/login_screen.dart';
 import 'package:vexshop/screens/main_screen.dart';
 import 'package:get_storage/get_storage.dart';
@@ -177,7 +178,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       child: ElevatedButton(
                         style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(
-                                Colors.deepOrange[100])),
+                                AppColor.backGroundColor)),
                         child: const Text('commencez'),
                         onPressed: () {
                           Navigator.pushReplacementNamed(
@@ -206,7 +207,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           child: ElevatedButton(
             style: ButtonStyle(
                 backgroundColor:
-                    MaterialStateProperty.all(Colors.deepOrange[100])),
+                    MaterialStateProperty.all(AppColor.backGroundColor)),
             child: const Text('Connexion'),
             onPressed: () {
               Navigator.pushReplacementNamed(context, LoginScreen.id);
@@ -227,7 +228,7 @@ class OnboardPage extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          color: Colors.deepOrange[100],
+          color: AppColor.backGroundColor,
           child: Center(child: bordColumn),
         ),
         Align(

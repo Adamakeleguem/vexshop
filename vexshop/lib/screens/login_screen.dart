@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vexshop/components/colors.dart';
 import 'package:vexshop/screens/main_screen.dart';
 import 'package:vexshop/screens/registration_screen.dart';
 
@@ -68,11 +69,11 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColor.backGroundColor,
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            color: Colors.white,
+            color: AppColor.backGroundColor,
             child: Padding(
               padding: const EdgeInsets.all(36.0),
               child: Form(

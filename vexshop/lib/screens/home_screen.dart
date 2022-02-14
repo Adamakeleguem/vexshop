@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vexshop/components/colors.dart';
 import 'package:vexshop/screens/account_screen.dart';
 import 'package:vexshop/screens/cart_screen.dart';
 import 'package:vexshop/screens/login_screen.dart';
@@ -11,6 +12,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.backGroundColor,
       appBar: AppBar(
         title: const Text('VexShop'),
         actions: <Widget>[

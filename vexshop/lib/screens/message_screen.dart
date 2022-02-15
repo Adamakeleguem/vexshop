@@ -13,7 +13,7 @@ class MessageScreen extends StatelessWidget {
       body: Container(
         child: const Center(
           child: Text(
-            "Messagerie",
+            "Centre de messagerie",
             style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
           ),
         ),
